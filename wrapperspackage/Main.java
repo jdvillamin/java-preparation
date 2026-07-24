@@ -1,6 +1,6 @@
 package wrapperspackage;
 
-public class WrapperDemo {
+public class Main {
     public static void main(String[] args) {
         // BooleanDemo.instantiateDemo();
         // BooleanDemo.equalityDemo();
