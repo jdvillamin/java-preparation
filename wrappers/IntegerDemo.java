@@ -88,6 +88,9 @@ class IntegerDemo {
         System.out.println(i1 == i2); // true, because i1 is unboxed to int for comparison
         System.out.println(l1 == l2); // true, because l1 is unboxed
         System.out.println(i1 == i3); // false, because 128 is outside the range of -128 to 127, so i1 and i3 are different objects
+        System.out.println(i1.equals(i3)); // true, because equals() compares the values of the Integer objects
+        System.out.println(i1.equals(l1)); // false, because equals() compares the types of the objects, and i1 is an Integer and l1 is a Long
+        System.out.println(l1.equals(i1)); // false, because equals() compares the types of the objects, and l1 is a Long and i1 is an Integer
 
         Integer i4 = 127;
         Integer i5 = Integer.parseInt("127");
