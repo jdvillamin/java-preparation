@@ -1,4 +1,4 @@
-package printpackage;
+package printing;
 
 class Example {
     public String toString() {
