@@ -46,7 +46,11 @@ class StringBuilderDemo {
         System.out.println(sb1.append(new char[]{'H', 'e', 'l', 'l', 'o'}, 1, 3));
 
         // insert(int offset, ...)
+        // insert(int offset, ..., int start, int end)
+        // insert(int offset, char[] str, int offset, int len)
         System.out.println(sb2.insert(5, ","));
+        System.out.println(sb2.insert(5, " How are you?", 5, 7));
+        System.out.println(sb2.insert(5, new char[]{'H', 'e', 'l', 'l', 'o'}, 1, 3));
 
         // REMEMBER: end index is handled gracefully, but start index must be valid
         // delete(int start, int end)
@@ -56,7 +60,11 @@ class StringBuilderDemo {
         System.out.println(sb3.delete(5, 100)); // end index is handled gracefully
         // System.out.println(sb3.delete(100, 200)); // throws StringIndexOutOfBoundsException
 
-        // REMEMBER: end index is handled gracefully, but start index must be valid
+        // REMEMBER: 
+        // - end index is handled gracefully, but start index must be valid
+        // - this is different from String's replace(old, new) method, which replaces all occurrences of old with new
+        // - StringBuilder's replace(start, end, str) method replaces the substring from start to end with str
+        // - StringBuilder doesn't have replace(int start, int end, String str, int start, int end) method
         // replace(int start, int end, String str)
         System.out.println(sb4.replace(5, 6, ","));
         System.out.println(sb4.replace(5, 100, "!")); // end index is handled gracefully
@@ -76,5 +84,25 @@ class StringBuilderDemo {
         System.out.println(sb6.toString().replace('\u0000', '-'));
         System.out.println("Length: " + sb6.length());
         System.out.println("Capacity: " + sb6.capacity());
+
+        // REMEMBER: substring is the only method from String that isn't mutating
+        // substring(int start)
+        // substring(int start, int end)
+        System.out.println(sb1.substring(6));
+        System.out.println(sb1.substring(6, 11));
+
+        // methods from String that are also in StringBuilder
+        // charAt(int index)
+        // indexOf(String str)
+        // indexOf(String str, int fromIndex)
+        // lastIndexOf(String str)
+        // lastIndexOf(String str, int fromIndex)
+
+        System.out.println(sb1.charAt(6));
+        System.out.println(sb1.indexOf("World"));
+        System.out.println(sb1.indexOf("World", 7));
+        System.out.println(sb1.lastIndexOf("World"));
+        System.out.println(sb1.lastIndexOf("World", 10));
+
     }
 }
