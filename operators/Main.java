@@ -1,4 +1,4 @@
-package operatorspackage;
+package operators;
 
 class Parent {}
 

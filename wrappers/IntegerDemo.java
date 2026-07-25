@@ -1,4 +1,4 @@
-package wrapperspackage;
+package wrappers;
 
 class IntegerDemo {
     static void instantiateDemo() {

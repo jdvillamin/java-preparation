@@ -1,4 +1,4 @@
-package fieldspackage;
+package fields;
 
 class Parent {
     int x = 5;

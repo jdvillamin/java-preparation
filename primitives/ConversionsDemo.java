@@ -1,4 +1,4 @@
-package primitivespackage;
+package primitives;
 
 class ConversionsDemo {
     static void conversionDemo() {

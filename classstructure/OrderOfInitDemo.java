@@ -1,4 +1,4 @@
-package classstructurepackage;
+package classstructure;
 
 class OrderOfInitDemo {
     static int x = print();
