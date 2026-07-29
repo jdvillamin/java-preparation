@@ -22,7 +22,13 @@ fi
 
 package_dir=${package_name//.//}
 main_source="$package_dir/Main.java"
+build_root=".build"
 build_dir=".build/classes"
+
+cleanup() {
+    rm -rf -- "$build_root"
+}
+trap cleanup EXIT
 
 if [[ ! -d $package_dir ]]; then
     echo "Package directory not found: $package_dir" >&2
@@ -34,7 +40,7 @@ if [[ ! -f $main_source ]]; then
     exit 1
 fi
 
-rm -rf -- "$build_dir"
+rm -rf -- "$build_root"
 mkdir -p -- "$build_dir"
 
 mapfile -d '' sources < <(find "$package_dir" -type f -name '*.java' -print0 | sort -z)

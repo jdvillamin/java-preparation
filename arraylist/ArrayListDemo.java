@@ -2,22 +2,22 @@ package arraylist;
 
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
 
 class ArrayListDemo {
     static void creationDemo() {
         // Ways to instantiate ArrayList
         // 1. Using default constructor
-        ArrayList al1 = new ArrayList();
+        ArrayList<String> al1 = new ArrayList<>();
+        System.out.println("Initial size of al1: " + al1.size());
 
         // 2. Using constructor with initial capacity
         // REMEMBER: ArrayList does not have capacity() method 
-        ArrayList al2 = new ArrayList(10);
+        ArrayList<String> al2 = new ArrayList<>(10);
         System.out.println("Initial size of al2: " + al2.size());
 
         // 3. Using constructor with Collection
-        ArrayList al3 = new ArrayList(Arrays.asList("A", "B", "C"));
-        ArrayList al4 = new ArrayList(Arrays.asList(new String[] {"A", "B", "C"}));
+        ArrayList<String> al3 = new ArrayList<>(Arrays.asList("A", "B", "C"));
+        ArrayList<String> al4 = new ArrayList<>(Arrays.asList(new String[] {"A", "B", "C"}));
         System.out.println("Initial size of al3: " + al3.size());
         System.out.println("Initial size of al4: " + al4.size());
     }
