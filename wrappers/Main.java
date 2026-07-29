@@ -5,8 +5,12 @@ public class Main {
         // BooleanDemo.instantiateDemo();
         // BooleanDemo.equalityDemo();
         // BooleanDemo.methodsDemo();
+
         // IntegerDemo.instantiateDemo();
         // IntegerDemo.parseAndDecodeDemo();
-        IntegerDemo.differentTypeDemo();
+        // IntegerDemo.differentTypeDemo();
+        IntegerDemo.cachingDemo();
+        
+        // FloatDemo.creationDemo();
     }
 }

@@ -102,6 +102,19 @@ class IntegerDemo {
         System.out.println(i4 == i6); // true, because both are the same static object for values between -128 and 127
         System.out.println(i4 == i7); // true, because i4 is unboxed to int for comparison
         System.out.println(i4 == i8); // true, because i4 is unboxed to int for comparison
+    }
 
+    static void cachingDemo() {
+        // REMEMBER: valueOf and parseInt will both cache because valueOf will cache and parseInt will return a primitive
+        Integer i1 = 100;
+        Integer i2 = Integer.valueOf(100);
+        Integer i3 = Integer.parseInt("100");
+        Integer i4 = new Integer(100);
+
+        System.out.println(i1 == i2); // true, because both are the same static object for values between -128 and 127
+        System.out.println(i1 == i3); // true, because both are the same static
+        System.out.println(i1 == i4); // false, because i4 is a new
+
+        System.out.println(i1.equals(i4)); // true, because equals() compares the values of the Integer objects
     }
 }
